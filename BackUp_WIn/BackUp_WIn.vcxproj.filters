@@ -20,13 +20,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
+    <ResourceCompile Include="folder.rc">
+      <Filter>Fichiers de ressources</Filter>
+    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="folder.rc">
-      <Filter>Fichiers sources</Filter>
-    </ResourceCompile>
+    <ClInclude Include="resource.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

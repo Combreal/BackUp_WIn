@@ -1,17 +1,18 @@
-﻿La génération a démarré 22/03/2018 19:59:11.
-     1>Projet "C:\Users\mjolly\documents\visual studio 2010\Projects\BackUp_WIn\BackUp_WIn\BackUp_WIn.vcxproj" sur le nœud 2 (build cible(s)).
+﻿La génération a démarré 23/03/2018 17:32:45.
+     1>Projet "C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\BackUp_WIn\BackUp_WIn.vcxproj" sur le nœud 2 (build cible(s)).
      1>InitializeBuildStatus:
-         Mise à jour de l'horodatage "Debug\BackUp_WIn.unsuccessfulbuild".
+         Création de "Debug\BackUp_WIn.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\mjolly\documents\visual studio 2010\projects\backup_win\backup_win\main.cpp(17): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+     1>c:\users\mjolly\documents\visual studio 2010\projects\backup_win\backup_win\main.cpp(54): warning C4101: 'hwndButton' : variable locale non référencée
+     1>c:\users\mjolly\documents\visual studio 2010\projects\backup_win\backup_win\main.cpp(57): warning C4101: 'hwndButtonD' : variable locale non référencée
        ResourceCompile:
          Toutes les sorties sont à jour.
        ManifestResourceCompile:
          Toutes les sorties sont à jour.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mjolly\documents\visual studio 2010\Projects\BackUp_WIn\Debug\BackUp_WIn.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BackUp_WIn.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\mjolly\documents\visual studio 2010\Projects\BackUp_WIn\Debug\BackUp_WIn.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mjolly\documents\visual studio 2010\Projects\BackUp_WIn\Debug\BackUp_WIn.lib" /MACHINE:X86 Debug\folder.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Debug\BackUp_WIn.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BackUp_WIn.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Debug\BackUp_WIn.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Debug\BackUp_WIn.lib" /MACHINE:X86 Debug\folder.res
          Debug\BackUp_WIn.exe.embed.manifest.res
          Debug\main.obj
        Manifest:
@@ -19,12 +20,12 @@
          Toutes les sorties sont à jour.
        LinkEmbedManifest:
          Toutes les sorties sont à jour.
-         BackUp_WIn.vcxproj -> C:\Users\mjolly\documents\visual studio 2010\Projects\BackUp_WIn\Debug\BackUp_WIn.exe
+         BackUp_WIn.vcxproj -> C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Debug\BackUp_WIn.exe
        FinalizeBuildStatus:
          Suppression du fichier "Debug\BackUp_WIn.unsuccessfulbuild".
          Mise à jour de l'horodatage "Debug\BackUp_WIn.lastbuildstate".
-     1>Génération du projet "C:\Users\mjolly\documents\visual studio 2010\Projects\BackUp_WIn\BackUp_WIn\BackUp_WIn.vcxproj" terminée (build cible(s)).
+     1>Génération du projet "C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\BackUp_WIn\BackUp_WIn.vcxproj" terminée (build cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:01.07
+Temps écoulé 00:00:01.52

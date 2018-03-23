@@ -11,3 +11,4 @@
 #define ID_EDITB 21
 #define ID_EDITC 22
 #define ID_EDITD 23
+#define ID_LISTBOX_TEXT 30
