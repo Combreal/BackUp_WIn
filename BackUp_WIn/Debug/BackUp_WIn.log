@@ -1,12 +1,10 @@
-﻿La génération a démarré 23/03/2018 17:32:45.
+﻿La génération a démarré 29/03/2018 16:40:52.
      1>Projet "C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\BackUp_WIn\BackUp_WIn.vcxproj" sur le nœud 2 (build cible(s)).
      1>InitializeBuildStatus:
          Création de "Debug\BackUp_WIn.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\mjolly\documents\visual studio 2010\projects\backup_win\backup_win\main.cpp(54): warning C4101: 'hwndButton' : variable locale non référencée
-     1>c:\users\mjolly\documents\visual studio 2010\projects\backup_win\backup_win\main.cpp(57): warning C4101: 'hwndButtonD' : variable locale non référencée
        ResourceCompile:
          Toutes les sorties sont à jour.
        ManifestResourceCompile:
@@ -28,4 +26,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:01.52
+Temps écoulé 00:00:01.73
