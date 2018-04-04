@@ -44,7 +44,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 	wc.hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_MYICON));
 	wc.hCursor = LoadCursor(0, IDC_ARROW);
 	RegisterClassW(&wc);
-	hWindowa = CreateWindowW(wc.lpszClassName, L"BackUp",	WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX | WS_VISIBLE, 60, 134, 528, 200, 0, 0, hInstance, 0);
+	hWindowa = CreateWindowW(wc.lpszClassName, L"BackUp",	WS_SYSMENU | WS_CAPTION | WS_MINIMIZEBOX | WS_VISIBLE, 60, 134, 528, 153, 0, 0, hInstance, 0);
 	WNDCLASSW wcB = {0};
     wcB.lpszClassName = L"EditText";
     wcB.hInstance = hInstance;
@@ -70,7 +70,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-	static wchar_t *team =  L"Nom de l'equipe :";
+	static wchar_t *homedir =  L"Sauvegarder la homedir Windown Bash :";
 	static wchar_t *srcdir =  L"Dossier source : ";
 	static wchar_t *destdir =  L"Dossier de destination : ";
 	static wchar_t *bufreq =  L"Frequence de sauvegarde : ";
@@ -94,68 +94,29 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 				SendMessage(hwnd, WM_CLOSE, 0, 0);
 			}
 		}     
-		break; 
+		break;
 	case WM_CREATE:
 		GetUserNameW((TCHAR*)username, &size);
 		CenterWindow(hwnd);
 		hMyIcon = LoadImage(hInstance,MAKEINTRESOURCE(IDI_MYICONY), IMAGE_ICON, 23, 23, NULL);
 		hMyIconB = LoadImage(hInstance,MAKEINTRESOURCE(IDI_MYICONY), IMAGE_ICON, 23, 23, NULL);
-		hwndLabel = CreateWindowW(L"Static", team, WS_CHILD|WS_VISIBLE|SS_LEFT, 10, 12, 197, 30, hwnd, (HMENU)1, NULL, NULL);
-		hWndListBox = CreateWindowW(L"Listbox", NULL, WS_VISIBLE | WS_CHILD | LBS_STANDARD | LBS_NOTIFY, 195, 9, 120, 23, hwnd, (HMENU)ID_LISTBOX_TEXT, NULL, NULL);
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 0, (LPARAM)L"ABS");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 1, (LPARAM)L"ACUMES");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 2, (LPARAM)L"AROMATH");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 3, (LPARAM)L"ATHENA");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 4, (LPARAM)L"BIOCORE");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 5, (LPARAM)L"BIOVISION");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 6, (LPARAM)L"CAMIN");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 7, (LPARAM)L"CASTOR");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 8, (LPARAM)L"COATI");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 9, (LPARAM)L"COFFEE");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 10, (LPARAM)L"DATASHAPE");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 11, (LPARAM)L"DIANA");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 12, (LPARAM)L"ECUADOR");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 13, (LPARAM)L"EPIONE");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 14, (LPARAM)L"FACTAS");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 15, (LPARAM)L"FOCUS");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 16, (LPARAM)L"GRAPHDECO");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 17, (LPARAM)L"GRAPHIK");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 18, (LPARAM)L"HEPHAISTOS");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 19, (LPARAM)L"INDES");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 20, (LPARAM)L"KAIROS");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 21, (LPARAM)L"LEMON");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 22, (LPARAM)L"MARELLE");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 23, (LPARAM)L"MATHNEURO");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 24, (LPARAM)L"MCTAO");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 25, (LPARAM)L"MORPHEME");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 26, (LPARAM)L"NACHOS");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 27, (LPARAM)L"NEO");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 28, (LPARAM)L"STARS");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 29, (LPARAM)L"TITANE");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 30, (LPARAM)L"TOSCA");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 31, (LPARAM)L"WIMMICS");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 32, (LPARAM)L"DREAM");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 33, (LPARAM)L"DSI");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 34, (LPARAM)L"SAF");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 35, (LPARAM)L"SEMIR");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 36, (LPARAM)L"SMGRH");
-		SendMessage(GetDlgItem(hwnd, ID_LISTBOX_TEXT), LB_ADDSTRING, 37, (LPARAM)L"SRH");	
-		hwndLabelB = CreateWindowW(L"Static", srcdir, WS_CHILD | WS_VISIBLE | SS_LEFT, 10, 40, 197, 30, hwnd, (HMENU)ID_LABELB, NULL, NULL);
-		hwndSrcdir = CreateWindowW(L"Edit", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER, 195, 37, 270, 23, hwnd, (HMENU)ID_EDITB, NULL, NULL);
+		hwndLabel = CreateWindowW(L"Static", homedir, WS_CHILD|WS_VISIBLE|SS_LEFT, 10, 12, 197, 30, hwnd, (HMENU)1, NULL, NULL);	
+		hwndLabelB = CreateWindowW(L"Static", srcdir, WS_CHILD | WS_VISIBLE | SS_LEFT, 10, 12, 197, 30, hwnd, (HMENU)ID_LABELB, NULL, NULL);
+		hwndSrcdir = CreateWindowW(L"Edit", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER, 195, 10, 270, 23, hwnd, (HMENU)ID_EDITB, NULL, NULL);
 		desty = desty + lpwstrToString(username) + buildy;
         SetWindowText(hwndSrcdir, stringToLPWSTR(desty));
-		hwndButtonB = CreateWindowW(L"Button", L"", WS_VISIBLE | WS_CHILD | BS_TEXT | BS_BOTTOM | BS_ICON, 475, 35, 26, 26, hwnd, (HMENU)ID_BUTTONB, hInstance, NULL);
-		hwndLabelC = CreateWindowW(L"Static", destdir, WS_CHILD | WS_VISIBLE | SS_LEFT, 10, 70, 197, 30, hwnd, (HMENU)ID_LABELC, NULL, NULL);
-		hwndDestdir = CreateWindowW(L"Edit", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER, 195, 67, 270, 23, hwnd, (HMENU)ID_EDITC, NULL, NULL);
+		hwndButtonB = CreateWindowW(L"Button", L"", WS_VISIBLE | WS_CHILD | BS_TEXT | BS_BOTTOM | BS_ICON, 475, 5, 26, 26, hwnd, (HMENU)ID_BUTTONB, hInstance, NULL);
+		hwndLabelC = CreateWindowW(L"Static", destdir, WS_CHILD | WS_VISIBLE | SS_LEFT, 10, 40, 197, 30, hwnd, (HMENU)ID_LABELC, NULL, NULL);
+		hwndDestdir = CreateWindowW(L"Edit", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER, 195, 37, 270, 23, hwnd, (HMENU)ID_EDITC, NULL, NULL);
 		destyy = destyy + lpwstrToString(username) + buildyy;
         SetWindowText(hwndDestdir, stringToLPWSTR(destyy));
-		hwndButtonC = CreateWindowW(L"Button", L"", WS_VISIBLE | WS_CHILD | BS_TEXT | BS_BOTTOM | BS_ICON, 475, 65, 26, 26, hwnd, (HMENU)ID_BUTTONC, hInstance, NULL);		
-		hwndLabelD = CreateWindowW(L"Static", bufreq, WS_CHILD|WS_VISIBLE|SS_LEFT, 10, 100, 197, 30, hwnd, (HMENU)ID_LABELD, NULL, NULL);
-		hwndBufreq = CreateWindowW(L"Edit", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER, 195, 97, 40, 23, hwnd, (HMENU)ID_EDITD, NULL, NULL);
+		hwndButtonC = CreateWindowW(L"Button", L"", WS_VISIBLE | WS_CHILD | BS_TEXT | BS_BOTTOM | BS_ICON, 475, 35, 26, 26, hwnd, (HMENU)ID_BUTTONC, hInstance, NULL);		
+		hwndLabelD = CreateWindowW(L"Static", bufreq, WS_CHILD|WS_VISIBLE|SS_LEFT, 10, 68, 197, 30, hwnd, (HMENU)ID_LABELD, NULL, NULL);
+		hwndBufreq = CreateWindowW(L"Edit", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER, 195, 65, 40, 23, hwnd, (HMENU)ID_EDITD, NULL, NULL);
 		SetWindowText(hwndBufreq, L"2");
-		hwndLabelE = CreateWindowW(L"Static", L"H", WS_CHILD | WS_VISIBLE | SS_LEFT, 239, 100, 197, 30, hwnd, (HMENU)ID_LABELE, NULL, NULL);
-		hwndButtonD = CreateWindowW(L"Button", L"Liste d'exclusions", WS_VISIBLE | WS_CHILD, 305, 96, 140, 21, hwnd, (HMENU)ID_BUTTOND, NULL, NULL);
-		hwndButton = CreateWindowW(L"Button", L"Lancer BackUp", WS_VISIBLE | WS_CHILD, 200, 130, 120, 21, hwnd, (HMENU)ID_BUTTON, NULL, NULL);
+		hwndLabelE = CreateWindowW(L"Static", L"H", WS_CHILD | WS_VISIBLE | SS_LEFT, 239, 65, 197, 30, hwnd, (HMENU)ID_LABELE, NULL, NULL);
+		hwndButtonD = CreateWindowW(L"Button", L"Liste d'exclusions", WS_VISIBLE | WS_CHILD, 305, 68, 140, 21, hwnd, (HMENU)ID_BUTTOND, NULL, NULL);
+		hwndButton = CreateWindowW(L"Button", L"Lancer BackUp", WS_VISIBLE | WS_CHILD, 200, 95, 120, 21, hwnd, (HMENU)ID_BUTTON, NULL, NULL);
 		SendMessage(hwndButtonB, BM_SETIMAGE, (WPARAM)IMAGE_ICON,(LPARAM)hMyIcon);
 		SendMessage(hwndButtonC, BM_SETIMAGE, (WPARAM)IMAGE_ICON,(LPARAM)hMyIconB);
 		break;
@@ -297,7 +258,7 @@ void BackUp()
 
 std::string lpwstrToString(LPWSTR input)
 {
-    int cSize = WideCharToMultiByte (CP_ACP, 0, input, wcslen(input), NULL, 0, NULL, NULL);
+    int cSize = WideCharToMultiByte(CP_ACP, 0, input, wcslen(input), NULL, 0, NULL, NULL);
     std::string output(static_cast<size_t>(cSize), '\0');
     WideCharToMultiByte (CP_ACP, 0, input, wcslen(input), reinterpret_cast<char*>(&output[0]), cSize, NULL, NULL);
     return output;
