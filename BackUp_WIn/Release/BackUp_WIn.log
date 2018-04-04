@@ -1,0 +1,25 @@
+﻿La génération a démarré 03/04/2018 17:38:45.
+     1>Projet "C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\BackUp_WIn\BackUp_WIn.vcxproj" sur le nœud 2 (build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Release\BackUp_WIn.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp -IC:/curly/include/curl /DCURL_STATICLIB 
+         main.cpp
+       ResourceCompile:
+         Toutes les sorties sont à jour.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Release\BackUp_WIn.exe" /INCREMENTAL:NO /NOLOGO libcurl_a.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\BackUp_WIn.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Release\BackUp_WIn.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Release\BackUp_WIn.lib" /MACHINE:X86 Release\folder.res
+         Release\main.obj /libpath:C:/curly/lib/libcurl_a.lib 
+         Génération de code en cours
+         Fin de la génération du code
+         BackUp_WIn.vcxproj -> C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Release\BackUp_WIn.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\Release\BackUp_WIn.exe;#1" /manifest Release\BackUp_WIn.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Suppression du fichier "Release\BackUp_WIn.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Release\BackUp_WIn.lastbuildstate".
+     1>Génération du projet "C:\Users\mjolly\Documents\Visual Studio 2010\Projects\BackUp_WIn\BackUp_WIn\BackUp_WIn.vcxproj" terminée (build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:01.66

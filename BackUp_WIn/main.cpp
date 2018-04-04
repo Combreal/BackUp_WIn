@@ -8,6 +8,9 @@
 #include <shlobj.h>
 #include <algorithm>
 #include <tchar.h>
+#include <curl.h> 
+
+#pragma comment(lib, "libcurl_a.lib")
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 LRESULT CALLBACK WndProcB(HWND, UINT, WPARAM, LPARAM);
@@ -18,6 +21,7 @@ bool showWindowB;
 TCHAR NPath[MAX_PATH];
 TCHAR username[UNLEN + 1];
 DWORD size = UNLEN + 1;
+std::string theTeam;
 void CenterWindow(HWND);
 void BackUp();
 std::string lpwstrToString(LPWSTR var);
@@ -25,8 +29,8 @@ LPWSTR stringToLPWSTR(const std::string& instr);
 int CALLBACK BrowseForFolderCallback(HWND hwnd,UINT uMsg,LPARAM lp, LPARAM pData);
 std::string BrowseFolders(HWND hwnd, LPSTR lpszFolder, LPSTR lpszTitle);
 void displayExcludeList(HWND hwndEdit, std::string passedString);
-std::ofstream file("backuprc", std::ios::out | std::ios::trunc); //std::ios_base::app
-//CreateProcessW(xx,command,x...)
+size_t WriteCallback(char *contents, size_t size, size_t nmemb, void *userp);
+std::ofstream file("backuprc", std::ios::out | std::ios::trunc);
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
@@ -75,10 +79,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     std::string buildy = "/home";
 	std::string destyy = "/user/";
 	std::string buildyy = "/ses/ses/BackupHome";
-	//std::string team;
+	std::string url = "http://fedora-serv/cgi-bin/srv-proj.cgi?user=";
     static wchar_t *pathy = L"C:\\";
 	static wchar_t *info = L"Selectionner le dossier pour la sauvegarde";
-	std::string source, destination;
+	std::string source, destination, curlTeam;
 	switch(msg)
 	{
 	case WM_KEYDOWN:
@@ -161,6 +165,20 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         {
             case ID_BUTTON:
 			{
+				CURL *curl;
+				CURLcode res;
+				curl_global_init(CURL_GLOBAL_DEFAULT);
+				curl = curl_easy_init();
+				if(curl)
+				{
+					url.append(lpwstrToString(username));
+					curl_easy_setopt(curl, CURLOPT_URL, url);
+					curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+					curl_easy_setopt(curl, CURLOPT_WRITEDATA, &theTeam);
+					res = curl_easy_perform(curl);
+					MessageBox(hwnd, stringToLPWSTR(theTeam), L"equipe", MB_OK);
+					curl_easy_cleanup(curl);
+				}
 				//BackUp();
 				int iListBox = 0;
                 TCHAR buff[1024];
@@ -354,4 +372,10 @@ void displayExcludeList(HWND hwndEdit, std::string passedString)
     }
 	SetWindowText(hwndEdit, stringToLPWSTR(reBuildString));
     inFileB.close();
+}
+
+size_t WriteCallback(char *contents, size_t size, size_t nmemb, void *userp)
+{
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
 }

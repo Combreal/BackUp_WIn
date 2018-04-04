@@ -1,4 +1,2 @@
-re.obj
-tatie.cpp
-
+*.obj
 
