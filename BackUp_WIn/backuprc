@@ -1,0 +1,17 @@
+# serveur destinataire
+BKSV=srv-semir.inria.fr
+
+
+# repertoire recepteur. Le creer sur BKSV s il n existe pas.
+BKDESTDIR='/user/mjolly/ses/ses/BackupHome'
+
+# repertoires locaux a synchroniser vers BKDESTDIR
+BKSRCDIR='C:\Users\mjolly'
+
+# BKDESTUSER=${USERNAME}			    # loginname a faire paraitre dans l article syslog.
+# MAILDEST=${USERNAME}        			# Adresse mail recepteur des Mails
+# SMTPRELAY='smtp.inria.fr' 			# serveur smtp pour envoie du mail d'erreur
+# MAILDOMAIN='inria.fr'
+# MAILDEST=${USERNAME}@sophia.inria.fr  #
+# MAILFROM=${USERNAME}@sophia.inria.fr  #
+C:\Users\

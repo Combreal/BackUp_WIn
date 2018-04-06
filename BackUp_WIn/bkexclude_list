@@ -1,0 +1,13 @@
+NTUSER.DAT
+ntuser.dat*
+UsrClass.dat*
+UsrClass
+pagefile.sys
+pagefil2.sys
+*.lnk
+*.lock
+System*/
+/**/Cache/
+/**/Cache.Trash
+
+
